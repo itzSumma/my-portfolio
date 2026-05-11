@@ -12,7 +12,7 @@ const projects = [
     category: "Full Stack Development",
     img: "/digitools.png",
     description: "A comprehensive toolkit for digital creators, featuring advanced asset management and collaboration tools.",
-    tech: ["Next.js", "MongoDB", "Tailwind"],
+    tech: ["React", "Vite", "Tailwind CSS", "DaisyUI", "React Icons", "React Toastify", "JSON Data"],
     link: "https://digitools-landing-page.netlify.app/",
   },
   {
@@ -20,7 +20,7 @@ const projects = [
     category: "Web Application",
     img: "/keen-keeper.png",
     description: "A modern productivity app designed to help users stay focused and manage their tasks efficiently.",
-    tech: ["React", "Node.js", "Express"],
+    tech: ["React 19", "React Router 7", "Tailwind CSS 4", "DaisyUI", "React Toastify", "Recharts", "Vite"],
     link: "https://keen-keeper-friendzone.netlify.app/",
   },
   {
@@ -28,7 +28,7 @@ const projects = [
     category: "E-commerce Platform",
     img: "/qurbani-hat.png",
     description: "A specialized e-commerce platform for livestock trading with real-time bidding and secure payments.",
-    tech: ["MERN Stack", "Redux", "Firebase"],
+    tech: ["Next.js", "React", "Tailwind CSS", "MongoDB", "Better Auth", "Google OAuth", "Vercel"],
     link: "https://qurbani-hat-main.vercel.app/",
   },
 ];
@@ -86,7 +86,7 @@ export default function HorizontalProjects() {
 
                   <div className="flex flex-wrap gap-3">
                     {project.tech.map((t) => (
-                      <span key={t} className="px-4 py-1.5 rounded-full text-xs font-bold border border-white/10 bg-white/5 text-white/80">
+                      <span key={t} className="px-5 py-2 rounded-xl text-xs font-bold border border-primary/20 bg-primary/5 text-primary shadow-[0_0_15px_rgba(70,238,221,0.05)] hover:bg-primary/10 transition-colors">
                         {t}
                       </span>
                     ))}

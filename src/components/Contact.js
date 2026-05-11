@@ -28,7 +28,7 @@ export default function Contact() {
               I am currently open to full-time opportunities, collaborations, and contract work. Let’s build something amazing together.
             </p>
 
-            {/* Contact Info */}
+            {/* CONTACT INFO */}
             <div className="space-y-4">
 
               {/* Email */}
@@ -47,20 +47,33 @@ export default function Contact() {
                 📞 01874760967
               </a>
 
-              {/* Social Links */}
+              {/* SOCIAL LINKS */}
               <div className="flex flex-wrap gap-6 pt-2">
 
                 {[
-                  { name: "GitHub", link: "https://github.com/itzSumma" },
-                  { name: "LinkedIn", link: "https://www.linkedin.com/in/sultana-summa/" },
-                  { name: "Facebook", link: "#" },
-                  { name: "Instagram", link: "#" },
+                  {
+                    name: "GitHub",
+                    link: "https://github.com/itzSumma",
+                  },
+                  {
+                    name: "LinkedIn",
+                    link: "https://www.linkedin.com/in/sultana-summa/",
+                  },
+                  {
+                    name: "Facebook",
+                    link: "https://www.facebook.com/profile.php?id=61552100236600",
+                  },
+                  {
+                    name: "Instagram",
+                    link: "https://www.instagram.com/_summa611",
+                  },
                 ].map((social) => (
                   <Magnetic key={social.name}>
                     <a
                       href={social.link}
                       target="_blank"
-                      className="text-white/50 hover:text-white transition-colors uppercase text-xs font-mono tracking-widest"
+                      rel="noreferrer"
+                      className="text-white/50 hover:text-white hover:scale-105 transition-all duration-300 uppercase text-xs font-mono tracking-widest"
                     >
                       {social.name}
                     </a>
@@ -111,7 +124,7 @@ export default function Contact() {
             <Magnetic>
               <button
                 type="submit"
-                className="w-full py-5 bg-primary text-black font-bold rounded-xl hover:scale-[0.98] transition-transform shadow-lg shadow-primary/20"
+                className="w-full py-5 bg-primary text-black font-bold rounded-xl hover:scale-[0.98] hover:shadow-[0_0_25px_rgba(70,238,221,0.3)] transition-all duration-300"
               >
                 SEND MESSAGE
               </button>

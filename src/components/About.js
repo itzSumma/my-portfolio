@@ -68,19 +68,28 @@ export default function About() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8">
-              <div className="p-6 rounded-2xl glass border border-white/5 space-y-3">
-                <h4 className="text-white font-bold">Creative Mindset</h4>
-                <p className="text-white/50 text-sm">
-                  Outside of coding, I enjoy learning new technologies, improving problem-solving skills, and exploring creative ideas.
-                </p>
-              </div>
-              <div className="p-6 rounded-2xl glass border border-white/5 space-y-3">
-                <h4 className="text-white font-bold">Current Focus</h4>
-                <p className="text-white/50 text-sm">
-                  Focused on becoming a strong full-stack developer by building real-world projects and sharpening backend skills.
-                </p>
-              </div>
-            </div>
+
+  <div className="p-6 rounded-2xl glass border border-white/5 space-y-3 transition-all duration-300 hover:scale-[1.03] hover:border-primary/40 hover:shadow-[0_0_30px_rgba(70,238,221,0.15)]">
+
+    <h4 className="text-white font-bold">Creative Mindset</h4>
+
+    <p className="text-white/50 text-sm">
+      Outside of coding, I enjoy learning new technologies, improving problem-solving skills, and exploring creative ideas.
+    </p>
+
+  </div>
+
+  <div className="p-6 rounded-2xl glass border border-white/5 space-y-3 transition-all duration-300 hover:scale-[1.03] hover:border-primary/40 hover:shadow-[0_0_30px_rgba(70,238,221,0.15)]">
+
+    <h4 className="text-white font-bold">Current Focus</h4>
+
+    <p className="text-white/50 text-sm">
+      Focused on becoming a strong full-stack developer by building real-world projects and sharpening backend skills.
+    </p>
+
+  </div>
+
+</div>
           </div>
         </motion.div>
       </div>

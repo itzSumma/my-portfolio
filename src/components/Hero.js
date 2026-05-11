@@ -4,6 +4,12 @@ import { motion } from "framer-motion";
 import Magnetic from "./Magnetic";
 
 export default function Hero() {
+  const [isMounted, setIsMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   const containerVars = {
     initial: { transition: { staggerChildren: 0.1 } },
     animate: { transition: { staggerChildren: 0.1, delayChildren: 0.5 } },
@@ -65,39 +71,93 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Right Image */}
+        {/* Right Image Container */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8, rotate: 5 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.8 }}
           className="relative flex justify-center lg:justify-end"
         >
-          <motion.div
-            animate={{ y: [0, -20, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="relative w-64 h-64 md:w-80 md:h-80 lg:w-[450px] lg:h-[450px]"
-          >
-            {/* Background Glow */}
-            <div className="absolute inset-0 bg-primary/20 blur-[80px] rounded-full" />
+          <div className="relative w-72 h-72 md:w-96 md:h-96 lg:w-[500px] lg:h-[500px] flex items-center justify-center">
             
-            {/* Image Container */}
-            <div className="relative w-full h-full rounded-3xl overflow-hidden border-2 border-primary/20 shadow-2xl shadow-primary/10 group">
-              <img
-                src="/profile.jpeg"
-                alt="Sharmin Sultana"
-                className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
-            </div>
+            {/* Rotating Rings */}
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              className="absolute inset-0 border-2 border-dashed border-primary/20 rounded-full"
+            />
+            <motion.div
+              animate={{ rotate: -360 }}
+              transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+              className="absolute inset-8 border border-white/5 rounded-full"
+            />
 
-            {/* Floating Badges or Decorations */}
-            <div className="absolute -top-6 -right-6 p-4 glass rounded-2xl border border-primary/30 animate-pulse">
-               <span className="text-primary font-bold">MERN</span>
-            </div>
-            <div className="absolute -bottom-6 -left-6 p-4 glass rounded-2xl border border-primary/30">
-               <span className="text-primary font-bold">UI/UX</span>
-            </div>
-          </motion.div>
+            {/* Floating Particles - Client Side Only to fix hydration */}
+            {isMounted && [...Array(6)].map((_, i) => (
+              <motion.div
+                key={i}
+                animate={{
+                  y: [0, -20, 0],
+                  x: [0, 10, 0],
+                  opacity: [0.2, 0.5, 0.2],
+                }}
+                transition={{
+                  duration: 4 + i,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: i * 0.5,
+                }}
+                className="absolute w-2 h-2 bg-primary rounded-full blur-[2px]"
+                style={{
+                  top: `${Math.random() * 100}%`,
+                  left: `${Math.random() * 100}%`,
+                }}
+              />
+            ))}
+
+            {/* Main Image Wrapper */}
+            <motion.div
+              animate={{ y: [0, -20, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              className="relative w-64 h-64 md:w-80 md:h-80 lg:w-[420px] lg:h-[420px]"
+            >
+              {/* Background Glow */}
+              <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full animate-pulse" />
+              
+              {/* Image Container */}
+              <div className="relative w-full h-full rounded-[40px] overflow-hidden border-2 border-white/10 shadow-2xl group">
+                <img
+                  src="/profile.jpeg"
+                  alt="Sharmin Sultana"
+                  className="w-full h-full object-cover object-top grayscale-[10%] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+                
+                {/* Overlay details on hover */}
+                <div className="absolute inset-0 flex items-end justify-center p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="glass px-6 py-2 rounded-full border border-primary/30">
+                    <span className="text-primary font-bold text-sm tracking-widest uppercase">Developer</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Floating Tech Badges */}
+              <motion.div 
+                animate={{ rotate: [0, 10, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -top-4 -right-4 p-4 glass rounded-2xl border border-primary/30 shadow-xl z-20"
+              >
+                 <span className="text-primary font-bold text-xs uppercase">MERN</span>
+              </motion.div>
+              <motion.div 
+                animate={{ rotate: [0, -10, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -bottom-4 -left-4 p-4 glass rounded-2xl border border-primary/30 shadow-xl z-20"
+              >
+                 <span className="text-primary font-bold text-xs uppercase">Next.js</span>
+              </motion.div>
+            </motion.div>
+          </div>
         </motion.div>
       </div>
 

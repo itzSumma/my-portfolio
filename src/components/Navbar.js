@@ -5,8 +5,9 @@ import Magnetic from "./Magnetic";
 
 const navItems = [
   { name: "Home", href: "#" },
-  { name: "Projects", href: "#projects" },
   { name: "About", href: "#about" },
+  { name: "Education", href: "#education" },
+  { name: "Projects", href: "#projects" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -19,7 +20,7 @@ export default function Navbar() {
       setScrolled(window.scrollY > 50);
       
       // Basic active state logic based on scroll
-      const sections = ["home", "about", "projects", "contact"];
+      const sections = ["home", "about", "education", "projects", "contact"];
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
