@@ -25,14 +25,11 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative py-24 px-6 md:px-24 bg-background overflow-hidden">
-      
-      {/* Dynamic Background Elements */}
-      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      
-      {/* Large Decorative Text */}
+    <footer className="relative py-16 px-6 md:px-24 bg-background overflow-hidden border-t border-white/5">
+
+      {/* Background Text */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center pointer-events-none select-none opacity-[0.02]">
-        <h2 className="text-[15vw] font-bold font-display leading-none tracking-tighter whitespace-nowrap">
+        <h2 className="text-[12vw] font-bold font-display leading-none tracking-tighter whitespace-nowrap">
           SHARMIN SULTANA
         </h2>
       </div>
@@ -63,78 +60,99 @@ export default function Footer() {
       ))}
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-end">
-          
-          {/* Left Column: Branding & Contact */}
-          <div className="space-y-12">
-            <div className="space-y-6">
-              <motion.div 
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="text-4xl md:text-6xl font-bold font-display tracking-tighter text-white"
-              >
-                Let's <span className="text-primary">Connect.</span>
-              </motion.div>
-              <p className="text-white/40 text-lg max-w-sm font-body">
-                Available for freelance projects, full-time roles, and meaningful collaborations.
-              </p>
-            </div>
 
-            <div className="flex flex-wrap gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-end">
+
+          {/* LEFT SIDE */}
+          <div className="space-y-8">
+
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-bold font-display tracking-tighter text-white"
+            >
+              Design. Code. <span className="text-primary">Create.</span>
+            </motion.div>
+
+            <p className="text-white/40 text-sm max-w-sm font-body">
+              Building digital experiences with a focus on clean code and user-centric design.
+            </p>
+
+            {/* Social Links */}
+            <div className="flex flex-wrap gap-6">
+
               {socialLinks.map((social) => (
                 <Magnetic key={social.name}>
                   <a
                     href={social.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-sm font-bold uppercase tracking-widest text-white/30 hover:text-primary transition-all duration-300"
+                    className="text-xs font-bold uppercase tracking-widest text-white/30 hover:text-primary transition-all duration-300"
                   >
                     {social.name}
                   </a>
                 </Magnetic>
               ))}
+
             </div>
+
           </div>
 
-          {/* Right Column: Quick Info */}
-          <div className="flex flex-col items-start lg:items-end space-y-12">
-            <div className="flex flex-col items-start lg:items-end space-y-4">
-              <div className="text-xs uppercase tracking-[0.3em] text-white/20 font-bold">Contact Details</div>
-              <a href="mailto:itzsumma11@gmail.com" className="text-xl md:text-2xl font-medium text-white/60 hover:text-primary transition-colors">
+          {/* RIGHT SIDE */}
+          <div className="flex flex-col items-start lg:items-end space-y-8">
+
+            <div className="flex flex-col items-start lg:items-end space-y-3">
+
+              <div className="text-[10px] uppercase tracking-[0.3em] text-white/20 font-bold">
+                Contact Details
+              </div>
+
+              <a
+                href="mailto:itzsumma11@gmail.com"
+                className="text-lg md:text-xl font-medium text-white/60 hover:text-primary transition-colors"
+              >
                 itzsumma11@gmail.com
               </a>
-              <a href="tel:01874760967" className="text-white/40 hover:text-white transition-colors">
+
+              <a
+                href="tel:01874760967"
+                className="text-xs text-white/40 hover:text-white transition-colors"
+              >
                 📞 01874760967
               </a>
+
             </div>
 
-            <div className="flex items-center gap-8">
-              <Magnetic>
-                <button
-                  onClick={handleBackToTop}
-                  className="group flex items-center space-x-3 text-sm font-bold uppercase tracking-widest text-white/50 hover:text-white transition-all"
-                >
-                  <span className="w-8 h-[1px] bg-white/20 group-hover:w-12 group-hover:bg-primary transition-all" />
-                  <span>Back to top</span>
-                </button>
-              </Magnetic>
-            </div>
+            {/* Back to top */}
+            <Magnetic>
+              <button
+                onClick={handleBackToTop}
+                className="group flex items-center space-x-3 text-xs font-bold uppercase tracking-widest text-white/50 hover:text-white transition-all"
+              >
+                <span className="w-6 h-[1px] bg-white/20 group-hover:w-10 group-hover:bg-primary transition-all" />
+                <span>Back to top</span>
+              </button>
+            </Magnetic>
+
           </div>
+
         </div>
 
         {/* Divider */}
-        <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-white/10 to-transparent my-16" />
+        <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-white/10 to-transparent my-10" />
 
         {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-xs font-bold tracking-[0.2em] text-white/20 uppercase">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-bold tracking-[0.2em] text-white/20 uppercase">
+
           <div>© 2026 Sharmin Sultana</div>
+
           <div className="flex items-center gap-4">
-            <span>Built with passion</span>
-            <span className="w-1 h-1 rounded-full bg-primary" />
-            <span>Next.js & MERN</span>
+            <span>Built with Next.js & MERN</span>
           </div>
+
         </div>
+
       </div>
     </footer>
   );

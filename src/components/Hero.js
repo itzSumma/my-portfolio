@@ -59,14 +59,26 @@ export default function Hero() {
 
           <motion.div variants={textVars} className="mt-10 flex flex-wrap gap-4">
             <Magnetic>
-              <button className="px-8 py-4 bg-primary text-black font-bold rounded-xl hover:shadow-[0_0_20px_rgba(70,238,221,0.4)] transition-all duration-300">
+              <a 
+                href="/resume" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="px-8 py-4 bg-primary text-black font-bold rounded-xl hover:shadow-[0_0_20px_rgba(70,238,221,0.4)] transition-all duration-300 block"
+              >
                 Download Resume
-              </button>
+              </a>
             </Magnetic>
             <Magnetic>
-              <button className="px-8 py-4 glass text-white font-bold rounded-xl border border-white/10 hover:bg-white/5 transition-all">
+              <a 
+                href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="px-8 py-4 glass text-white font-bold rounded-xl border border-white/10 hover:bg-white/5 transition-all block"
+              >
                 Contact Me
-              </button>
+              </a>
             </Magnetic>
           </motion.div>
         </motion.div>

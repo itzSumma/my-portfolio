@@ -47,6 +47,11 @@ export default function Contact() {
                 📞 01874760967
               </a>
 
+              {/* Location */}
+              <div className="text-white/40 text-sm">
+                📍 Naogaon, Rajshahi
+              </div>
+
               {/* SOCIAL LINKS */}
               <div className="flex flex-wrap gap-6 pt-2">
 

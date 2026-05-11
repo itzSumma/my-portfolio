@@ -70,9 +70,14 @@ export default function Navbar() {
       </div>
 
       <Magnetic>
-        <button className="px-6 py-2 bg-white text-black rounded-full text-sm font-bold hover:bg-primary hover:text-black transition-all duration-500 shadow-lg hover:shadow-primary/20">
+        <a 
+          href="/resume" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="px-6 py-2 bg-white text-black rounded-full text-sm font-bold hover:bg-primary hover:text-black transition-all duration-500 shadow-lg hover:shadow-primary/20 block"
+        >
           Resume
-        </button>
+        </a>
       </Magnetic>
     </motion.nav>
   );
