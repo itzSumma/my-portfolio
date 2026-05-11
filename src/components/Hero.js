@@ -57,7 +57,7 @@ export default function Hero() {
             I enjoy building modern and responsive web applications while continuously learning new technologies and improving my development skills.
           </motion.p>
 
-          <motion.div variants={textVars} className="mt-10 flex flex-wrap gap-4">
+          <motion.div variants={textVars} className="mt-10 flex flex-wrap gap-8">
             <Magnetic>
               <a 
                 href="/resume" 

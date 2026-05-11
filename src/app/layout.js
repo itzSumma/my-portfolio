@@ -17,8 +17,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: "Leinad | Creative Developer",
-  description: "Futuristic & Immersive Portfolio of a Creative Developer",
+  title: "Sharmin Sultana | Frontend & MERN Stack Developer",
+  description: "Personal portfolio of Sharmin Sultana showcasing modern web applications, frontend expertise, and MERN stack projects.",
 };
 
 export default function RootLayout({ children }) {
