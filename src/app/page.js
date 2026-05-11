@@ -4,6 +4,7 @@ import CustomCursor from "@/components/CustomCursor";
 import BackgroundEffects from "@/components/BackgroundEffects";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import About from "@/components/About";
 import HorizontalProjects from "@/components/HorizontalProjects";
 import TechMarquee from "@/components/TechMarquee";
 import Contact from "@/components/Contact";
@@ -19,6 +20,7 @@ export default function Home() {
       
       <main>
         <Hero />
+        <About />
         <TechMarquee />
         <div id="projects">
           <HorizontalProjects />

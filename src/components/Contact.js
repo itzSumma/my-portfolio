@@ -5,57 +5,126 @@ import Magnetic from "./Magnetic";
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 px-8 md:px-24 bg-background">
-      <div className="max-w-7xl mx-auto glass rounded-3xl p-12 md:p-24 relative overflow-hidden">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 relative z-10">
+    <section id="contact" className="py-24 px-6 md:px-24 bg-background">
+
+      <div className="max-w-7xl mx-auto glass rounded-3xl p-10 md:p-20 relative overflow-hidden border border-white/10">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-14 relative z-10">
+
+          {/* LEFT SIDE */}
           <div className="space-y-8">
-            <h2 className="text-6xl md:text-8xl font-bold font-display tracking-tighter text-white leading-none">
+
+            <motion.h2
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-5xl md:text-7xl font-bold font-display tracking-tighter text-white leading-tight"
+            >
               LET'S <br />
               <span className="text-primary text-glow">CONNECT.</span>
-            </h2>
-            <p className="text-white/50 text-xl font-body max-w-sm">
-              I am currently open to full-time opportunities, collaborations, and contract work.
+            </motion.h2>
+
+            <p className="text-white/50 text-lg md:text-xl font-body max-w-md">
+              I am currently open to full-time opportunities, collaborations, and contract work. Let’s build something amazing together.
             </p>
-            
+
+            {/* Contact Info */}
             <div className="space-y-4">
-              <a href="mailto:hello@leinad.dev" className="block text-2xl font-medium text-white hover:text-primary transition-colors">
-                hello@leinad.dev
+
+              {/* Email */}
+              <a
+                href="mailto:itzsumma11@gmail.com"
+                className="block text-xl md:text-2xl font-medium text-white hover:text-primary transition-colors"
+              >
+                itzsumma11@gmail.com
               </a>
-              <div className="flex space-x-6">
-                {["LinkedIn", "Twitter", "GitHub", "Instagram"].map((social) => (
-                  <Magnetic key={social}>
-                    <a href="#" className="text-white/50 hover:text-white transition-colors uppercase text-xs font-mono tracking-widest">
-                      {social}
+
+              {/* Phone */}
+              <a
+                href="tel:01874760967"
+                className="block text-white/60 hover:text-white transition-colors"
+              >
+                📞 01874760967
+              </a>
+
+              {/* Social Links */}
+              <div className="flex flex-wrap gap-6 pt-2">
+
+                {[
+                  { name: "GitHub", link: "https://github.com/itzSumma" },
+                  { name: "LinkedIn", link: "https://www.linkedin.com/in/sultana-summa/" },
+                  { name: "Facebook", link: "#" },
+                  { name: "Instagram", link: "#" },
+                ].map((social) => (
+                  <Magnetic key={social.name}>
+                    <a
+                      href={social.link}
+                      target="_blank"
+                      className="text-white/50 hover:text-white transition-colors uppercase text-xs font-mono tracking-widest"
+                    >
+                      {social.name}
                     </a>
                   </Magnetic>
                 ))}
+
               </div>
+
             </div>
           </div>
 
+          {/* RIGHT SIDE - FORM */}
           <form className="space-y-6">
+
             <div className="space-y-2">
-              <label className="text-xs font-mono text-white/30 uppercase tracking-widest">Your Name</label>
-              <input type="text" className="w-full bg-transparent border-b border-white/10 py-4 text-white focus:outline-none focus:border-primary transition-colors" placeholder="Enter Name" />
+              <label className="text-xs font-mono text-white/30 uppercase tracking-widest">
+                Your Name
+              </label>
+              <input
+                type="text"
+                className="w-full bg-transparent border-b border-white/10 py-4 text-white focus:outline-none focus:border-primary transition-colors"
+                placeholder="Enter your name"
+              />
             </div>
+
             <div className="space-y-2">
-              <label className="text-xs font-mono text-white/30 uppercase tracking-widest">Your Email</label>
-              <input type="email" className="w-full bg-transparent border-b border-white/10 py-4 text-white focus:outline-none focus:border-primary transition-colors" placeholder="Enter Email" />
+              <label className="text-xs font-mono text-white/30 uppercase tracking-widest">
+                Your Email
+              </label>
+              <input
+                type="email"
+                className="w-full bg-transparent border-b border-white/10 py-4 text-white focus:outline-none focus:border-primary transition-colors"
+                placeholder="Enter your email"
+              />
             </div>
+
             <div className="space-y-2">
-              <label className="text-xs font-mono text-white/30 uppercase tracking-widest">Your Message</label>
-              <textarea rows="4" className="w-full bg-transparent border-b border-white/10 py-4 text-white focus:outline-none focus:border-primary transition-colors resize-none" placeholder="Enter Message"></textarea>
+              <label className="text-xs font-mono text-white/30 uppercase tracking-widest">
+                Your Message
+              </label>
+              <textarea
+                rows="5"
+                className="w-full bg-transparent border-b border-white/10 py-4 text-white focus:outline-none focus:border-primary transition-colors resize-none"
+                placeholder="Write your message..."
+              ></textarea>
             </div>
+
             <Magnetic>
-              <button type="submit" className="w-full py-6 bg-primary text-black font-bold rounded-xl hover:scale-[0.98] transition-transform">
+              <button
+                type="submit"
+                className="w-full py-5 bg-primary text-black font-bold rounded-xl hover:scale-[0.98] transition-transform shadow-lg shadow-primary/20"
+              >
                 SEND MESSAGE
               </button>
             </Magnetic>
+
           </form>
+
         </div>
 
-        {/* Decorative circle */}
-        <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-primary/20 rounded-full blur-3xl pointer-events-none" />
+        {/* Decorative Glow */}
+        <div className="absolute -bottom-24 -right-24 w-72 h-72 bg-primary/20 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-10 left-10 w-40 h-40 bg-white/5 rounded-full blur-2xl pointer-events-none" />
+
       </div>
     </section>
   );
