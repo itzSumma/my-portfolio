@@ -19,18 +19,23 @@
 :root {
   --background: #050816;
   --foreground: #e3e2e2;
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 @layer base {
   * {
-    @apply border-white/10;
+    @apply border-white/10 transition-colors duration-300;
   }
   body {
     @apply bg-background text-on-background font-body selection:bg-primary/30 selection:text-primary;
     overflow-x: hidden;
   }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tighter;
+  }
 }
-
 
 @layer utilities {
   .glass {
@@ -38,7 +43,7 @@
   }
   
   .text-glow {
-    text-shadow: 0 0 20px rgba(70, 238, 221, 0.5);
+    text-shadow: 0 0 30px rgba(70, 238, 221, 0.6);
   }
 
   .noise {
@@ -56,6 +61,10 @@
 
   .mask-reveal {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  
+  .section-padding {
+    @apply py-20 md:py-32 px-8 md:px-24;
   }
 }
 

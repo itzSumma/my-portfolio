@@ -8,28 +8,28 @@ gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
   {
-    title: "NEON DREAM",
-    category: "Web Design",
-    img: "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?q=80&w=2070&auto=format&fit=crop",
-    color: "#46eedd",
+    title: "DIGITOOLS",
+    category: "Full Stack Development",
+    img: "/digitools.png",
+    description: "A comprehensive toolkit for digital creators, featuring advanced asset management and collaboration tools.",
+    tech: ["Next.js", "MongoDB", "Tailwind"],
+    link: "https://digitools-landing-page.netlify.app/",
   },
   {
-    title: "CYBER CORE",
-    category: "Full Stack",
-    img: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=2070&auto=format&fit=crop",
-    color: "#00d1c1",
+    title: "KEEN KEEPER",
+    category: "Web Application",
+    img: "/keen-keeper.png",
+    description: "A modern productivity app designed to help users stay focused and manage their tasks efficiently.",
+    tech: ["React", "Node.js", "Express"],
+    link: "https://keen-keeper-friendzone.netlify.app/",
   },
   {
-    title: "QUANTUM UI",
-    category: "Product Design",
-    img: "https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=2070&auto=format&fit=crop",
-    color: "#46eedd",
-  },
-  {
-    title: "AETHER DEV",
-    category: "Mobile App",
-    img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2070&auto=format&fit=crop",
-    color: "#00d1c1",
+    title: "QURBANI HAT",
+    category: "E-commerce Platform",
+    img: "/qurbani-hat.png",
+    description: "A specialized e-commerce platform for livestock trading with real-time bidding and secure payments.",
+    tech: ["MERN Stack", "Redux", "Firebase"],
+    link: "https://qurbani-hat-main.vercel.app/",
   },
 ];
 
@@ -42,7 +42,7 @@ export default function HorizontalProjects() {
       sectionRef.current,
       { translateX: 0 },
       {
-        translateX: "-300vw",
+        translateX: "-200vw", // Adjusted for 3 projects
         ease: "none",
         duration: 1,
         scrollTrigger: {
@@ -61,41 +61,77 @@ export default function HorizontalProjects() {
   }, []);
 
   return (
-    <div className="overflow-hidden bg-[#050816]">
+    <div className="overflow-hidden bg-background">
       <div ref={triggerRef}>
-        <div ref={sectionRef} className="h-screen w-[400vw] flex flex-row relative">
+        <div ref={sectionRef} className="h-screen w-[300vw] flex flex-row relative">
           {projects.map((project, index) => (
             <div
               key={index}
               className="h-screen w-[100vw] flex items-center justify-center relative px-8 md:px-24"
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center w-full max-w-7xl">
-                <div className="space-y-6">
-                  <span className="text-primary font-mono text-sm tracking-widest uppercase">
-                    Project 0{index + 1}
-                  </span>
-                  <h2 className="text-[8vw] md:text-[6vw] font-bold font-display tracking-tighter text-white leading-none">
-                    {project.title}
-                  </h2>
-                  <p className="text-white/50 text-lg max-w-md font-body">
-                    A premium digital experience built with cutting-edge technologies to deliver unparalleled performance and visual impact.
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full max-w-7xl">
+                <div className="space-y-8">
+                  <div className="space-y-2">
+                    <span className="text-primary font-mono text-sm tracking-[0.3em] uppercase">
+                      Project 0{index + 1}
+                    </span>
+                    <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold font-display tracking-tighter text-white leading-none">
+                      {project.title}
+                    </h2>
+                  </div>
+                  
+                  <p className="text-white/60 text-lg md:text-xl max-w-lg font-body leading-relaxed">
+                    {project.description}
                   </p>
-                  <button className="px-8 py-4 glass text-white font-bold rounded-lg border border-white/10 hover:border-primary transition-colors">
-                    Case Study
-                  </button>
+
+                  <div className="flex flex-wrap gap-3">
+                    {project.tech.map((t) => (
+                      <span key={t} className="px-4 py-1.5 rounded-full text-xs font-bold border border-white/10 bg-white/5 text-white/80">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+
+                  <a 
+                    href={project.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-block"
+                  >
+                    <motion.button 
+                      whileHover={{ x: 10 }}
+                      className="group flex items-center space-x-4 text-white font-bold text-lg"
+                    >
+                      <span className="px-8 py-4 glass border border-white/10 rounded-xl group-hover:border-primary transition-colors">
+                        View Project
+                      </span>
+                    </motion.button>
+                  </a>
                 </div>
                 
-                <motion.div 
-                  whileHover={{ scale: 1.02 }}
-                  className="relative aspect-video rounded-2xl overflow-hidden glass group cursor-pointer"
+                <a 
+                  href={project.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block"
                 >
-                  <img
-                    src={project.img}
-                    alt={project.title}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-                  />
-                  <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                </motion.div>
+                  <motion.div 
+                    whileHover={{ scale: 1.02, rotate: -1 }}
+                    className="relative aspect-video rounded-3xl overflow-hidden glass border border-white/10 group cursor-pointer shadow-2xl"
+                  >
+                    <img
+                      src={project.img}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-all duration-700"
+                    />
+                    <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                    
+                    {/* Floating category tag */}
+                    <div className="absolute top-6 right-6 px-4 py-2 glass rounded-xl border border-white/20 text-xs font-bold text-white opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                      {project.category}
+                    </div>
+                  </motion.div>
+                </a>
               </div>
             </div>
           ))}
