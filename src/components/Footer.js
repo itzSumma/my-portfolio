@@ -109,14 +109,16 @@ export default function Footer() {
               </div>
 
               <a
-                href="mailto:itzsumma11@gmail.com"
+                href="mailto:itzSumma11@gmail.com"
                 className="text-lg md:text-xl font-medium text-white/60 hover:text-primary transition-colors"
               >
-                itzsumma11@gmail.com
+                itzSumma11@gmail.com
               </a>
 
               <a
-                href="tel:01874760967"
+                href="https://wa.me/8801874760967"
+                target="_blank"
+                rel="noreferrer"
                 className="text-xs text-white/40 hover:text-white transition-colors"
               >
                 📞 01874760967
