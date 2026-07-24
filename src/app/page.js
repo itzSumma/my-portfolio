@@ -9,6 +9,8 @@ import HorizontalProjects from "@/components/HorizontalProjects";
 import TechMarquee from "@/components/TechMarquee";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import Certificates from "@/components/Certificates";
+import Skills from "@/components/Skill";
 
 export default function Home() {
   return (
@@ -20,10 +22,12 @@ export default function Home() {
       <main>
         <Hero />
         <About />
-        <Education />
+        <Skills/>
         <TechMarquee />
-        <div id="projects">
           <HorizontalProjects />
+        <Education />
+        <Certificates/>
+        <div id="projects">
         </div>
         <Contact />
       </main>

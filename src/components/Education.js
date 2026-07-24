@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { GraduationCap, Calendar, Link as LinkIcon } from "lucide-react";
+import { GraduationCap, Calendar, Link as LinkIcon, Briefcase, MapPin, FolderGit2, Laptop, BadgeCheck, ArrowRight } from "lucide-react";
+import Magnetic from "./Magnetic";
 
 const educationData = [
   {
