@@ -2,12 +2,12 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Magnetic from "./Magnetic";
-
 import { Menu, X } from "lucide-react";
 
 const navItems = [
   { name: "Home", href: "#" },
   { name: "About", href: "#about" },
+  { name: "Skills", href: "#skills" },
   { name: "Education", href: "#education" },
   { name: "Projects", href: "#projects" },
   { name: "Contact", href: "#contact" },
@@ -20,9 +20,9 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 20);
       
-      const sections = ["home", "about", "education", "projects", "contact"];
+      const sections = ["home", "about", "skills", "education", "projects", "contact"];
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -43,30 +43,35 @@ export default function Navbar() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-        className={`fixed top-0 w-full z-[999] px-6 md:px-24 py-4 transition-all duration-500 flex justify-between items-center ${
-          scrolled ? "bg-background/80 backdrop-blur-xl border-b border-white/5 py-3 shadow-2xl" : "bg-transparent py-6"
+        className={`fixed top-0 w-full z-[999] px-6 md:px-24 transition-all duration-500 flex justify-between items-center ${
+          scrolled 
+            ? "bg-background/40 backdrop-blur-2xl border-b border-white/10 py-4 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]" 
+            : "bg-transparent py-6"
         }`}
       >
+        {/* Dynamic Two-Color Logo */}
         <Magnetic>
-          <div className="text-2xl font-bold font-display tracking-tighter text-white cursor-pointer group">
-            Sharmin<span className="text-primary group-hover:animate-pulse">.</span>
-          </div>
+          <a href="#" className="text-xl md:text-2xl font-bold font-display tracking-tighter cursor-pointer group flex items-center gap-1">
+            <span className="text-white drop-shadow-md">Sharmin</span>
+            <span className="text-primary drop-shadow-md">Sultana</span>
+            <span className="text-primary group-hover:animate-pulse">.</span>
+          </a>
         </Magnetic>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-12">
-          {navItems.map((item, i) => (
+        <div className="hidden md:flex items-center space-x-10">
+          {navItems.map((item) => (
             <Magnetic key={item.name}>
               <motion.a
                 href={item.href}
                 onClick={() => setActiveItem(item.name)}
-                className={`text-sm font-medium transition-all relative group ${
-                  activeItem === item.name ? "text-primary" : "text-white/60 hover:text-white"
+                className={`text-sm font-medium transition-all relative group py-1 ${
+                  activeItem === item.name ? "text-primary font-semibold" : "text-white/70 hover:text-white"
                 }`}
               >
                 {item.name}
-                <span className={`absolute -bottom-1 left-0 h-[1px] bg-primary transition-all duration-300 ${
-                  activeItem === item.name ? "w-full" : "w-0 group-hover:w-full"
+                <span className={`absolute -bottom-1 left-0 h-[2px] bg-primary rounded-full transition-all duration-300 ${
+                  activeItem === item.name ? "w-full shadow-[0_0_10px_#var(--primary)]" : "w-0 group-hover:w-full"
                 }`} />
               </motion.a>
             </Magnetic>
@@ -77,7 +82,7 @@ export default function Navbar() {
               href="/resume" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="px-6 py-2 bg-white text-black rounded-full text-sm font-bold hover:bg-primary hover:text-black transition-all duration-500 shadow-lg"
+              className="px-6 py-2.5 bg-white/10 hover:bg-primary text-white hover:text-black border border-white/20 backdrop-blur-md rounded-full text-sm font-bold transition-all duration-500 shadow-lg"
             >
               Resume
             </a>
@@ -89,33 +94,33 @@ export default function Navbar() {
           <Magnetic>
             <button 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 text-white/60 hover:text-white transition-colors"
+              className="p-2 text-white/80 hover:text-white transition-colors bg-white/5 border border-white/10 rounded-xl backdrop-blur-lg"
             >
-              {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </Magnetic>
         </div>
       </motion.nav>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu Glassmorphism Overlay */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "100%" }}
-            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-[998] bg-background flex flex-col items-center justify-center space-y-8 p-6 md:hidden"
+            initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
+            animate={{ opacity: 1, backdropFilter: "blur(20px)" }}
+            exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
+            transition={{ duration: 0.4 }}
+            className="fixed inset-0 z-[998] bg-background/80 backdrop-blur-2xl flex flex-col items-center justify-center space-y-6 p-6 md:hidden border border-white/10"
           >
             {navItems.map((item, i) => (
               <motion.a
                 key={item.name}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 * i }}
+                transition={{ delay: 0.08 * i }}
                 href={item.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-4xl font-bold font-display text-white/80 hover:text-primary transition-colors tracking-tighter"
+                className="text-3xl font-bold font-display text-white/80 hover:text-primary transition-colors tracking-tight"
               >
                 {item.name}
               </motion.a>
@@ -124,19 +129,19 @@ export default function Navbar() {
             <motion.a 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 * navItems.length }}
+              transition={{ delay: 0.08 * navItems.length }}
               href="/resume" 
               target="_blank" 
               rel="noopener noreferrer"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="px-10 py-4 bg-primary text-black font-bold rounded-2xl text-lg shadow-lg shadow-primary/20 mt-4"
+              className="px-10 py-3.5 bg-primary text-black font-bold rounded-2xl text-base shadow-lg shadow-primary/20 mt-4"
             >
               View Resume
             </motion.a>
 
             {/* Background Branding */}
-            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 opacity-[0.05] pointer-events-none text-6xl font-bold font-display whitespace-nowrap">
-              SHARMIN.
+            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 opacity-[0.03] pointer-events-none text-5xl font-bold font-display whitespace-nowrap">
+              SHARMIN SULTANA
             </div>
           </motion.div>
         )}
