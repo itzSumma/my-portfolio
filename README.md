@@ -1,55 +1,90 @@
-# 🚀 My Personal Portfolio
+# 🚀 My Portfolio
 
-Welcome to my personal portfolio project! I built this as a way to showcase my journey as a student and a developer. This project is a reflection of my passion for frontend development and my transition into a full-stack developer focusing on the MERN stack.
+A modern personal portfolio built with Next.js App Router, React, Tailwind CSS, GSAP, and Framer Motion. The site is designed to present my work, background, skills, and featured projects in a polished, recruiter-friendly dark theme.
 
-## ✨ About the Project
+## ✨ Overview
 
-This portfolio is built using **Next.js 15** and **Tailwind CSS**. My goal was to create a modern, immersive, and "futuristic" experience that feels alive. I used glassmorphism, dynamic animations, and interactive elements to make it stand out.
+This portfolio includes:
+
+- A premium landing experience with animated hero and background effects
+- A responsive navigation experience with section-based smooth scrolling
+- A featured projects section powered by shared project data
+- Dynamic project detail pages using the Next.js App Router
+- A dedicated resume page for printable professional viewing
+- Contact and footer sections for easy outreach
 
 ## 🛠️ Tech Stack
 
-*   **Framework**: [Next.js](https://nextjs.org/) (App Router)
-*   **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-*   **Animations**: [Framer Motion](https://www.framer.com/motion/)
-*   **Icons**: [Lucide React](https://lucide.dev/)
-*   **Fonts**: Plus Jakarta Sans, Inter, JetBrains Mono (via Google Fonts)
+- Framework: [Next.js 16](https://nextjs.org/)
+- UI Library: [React 19](https://react.dev/)
+- Styling: [Tailwind CSS](https://tailwindcss.com/)
+- Motion: [Framer Motion](https://www.framer.com/motion/)
+- Scroll Animation: [GSAP](https://greensock.com/gsap/)
+- Icons: [Lucide React](https://lucide.dev/)
 
-## 🌟 Key Features
+## 🌟 Featured Project Structure
 
-*   **Glassmorphism UI**: A sleek, translucent design with glowing accents.
-*   **Magnetic Hover Effects**: Interactive buttons and links that follow the cursor for a premium feel.
-*   **Smooth Scrolling**: Implementation of custom smooth scrolling for an elegant user experience.
-*   **Fully Responsive**: A customized navbar and layout that works perfectly on mobile, tablet, and desktop.
-*   **Dynamic Hero Section**: Features floating particles and rotating decorative elements.
-*   **Printable Resume**: A dedicated `/resume` page that looks professional and is ready to be saved as a PDF.
-*   **Project Showcase**: A section to highlight my learning and practice projects.
+The portfolio currently uses a shared project data source to power both the homepage cards and the project details routes.
 
-## 📖 My Learning Journey
+Included projects:
 
-Building this portfolio helped me sharpen several key skills:
-1.  **Next.js App Router**: Understanding layout systems, metadata, and client vs. server components.
-2.  **Advanced Tailwind**: Mastering complex layouts, custom animations, and responsive design.
-3.  **Framer Motion**: Learning how to trigger animations on scroll and create complex micro-interactions.
-4.  **UI/UX Design**: Focusing on visual hierarchy, readability, and modern aesthetics (dark mode, glowing effects).
+- DEVARCHIFY
+- VERDICT HUB
+- KEEN KEEPER
+
+Each project card includes:
+
+- Project image
+- Project title
+- View Details button
+
+The dynamic detail page renders the exact project content from the shared data model for that slug.
+
+## 📁 Project Highlights
+
+- Responsive layout across mobile, tablet, and desktop
+- Dark glassmorphism styling with motion-driven interactions
+- Project links that open in a new tab safely
+- Dynamic route support for individual project detail pages
+- Shared data reuse between the main showcase and the details view
 
 ## 🚀 Getting Started
 
-If you want to run this project locally:
+1. Clone the repository:
 
-1.  Clone the repository:
-    ```bash
-    git clone https://github.com/itzSumma/my-portfolio.git
-    ```
-2.  Install dependencies:
-    ```bash
-    npm install
-    ```
-3.  Run the development server:
-    ```bash
-    npm run dev
-    ```
-4.  Open [http://localhost:3000](http://localhost:3000) in your browser.
+   ```bash
+   git clone https://github.com/itzSumma/my-portfolio.git
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Open the app at:
+
+   ```text
+   http://localhost:3000
+   ```
+
+## ✅ Build Verification
+
+The project has been verified with a production build:
+
+```bash
+npm run build
+```
+
+This completes successfully with the current Next.js portfolio structure.
 
 ---
-Built with 💻 and ☕ by **Sharmin Sultana**.
-*Pursuing BSc in EEE @ Leading University*
+
+Built with 💻 and ☕ by **Sharmin Sultana Summa**.
+Pursuing BSc in EEE @ Leading University.
