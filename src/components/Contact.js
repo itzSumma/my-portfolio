@@ -56,14 +56,14 @@ export default function Contact() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-5xl md:text-7xl font-bold font-display tracking-tighter text-white leading-tight"
-            >
+              className="text-5xl md:text-7xl font-bold font-display tracking-tighter text-white leading-tight">
               LET'S <br />
               <span className="text-primary text-glow">CONNECT.</span>
             </motion.h2>
 
             <p className="text-white/50 text-lg md:text-xl font-body max-w-md">
-              I am currently open to full-time opportunities, collaborations, and contract work. Let’s build something amazing together.
+              I am currently open to full-time opportunities, collaborations,
+              and contract work. Let’s build something amazing together.
             </p>
 
             {/* CONTACT INFO */}
@@ -71,8 +71,7 @@ export default function Contact() {
               {/* Email */}
               <a
                 href="mailto:itzSumma11@gmail.com"
-                className="block text-xl md:text-2xl font-medium text-white hover:text-primary transition-colors"
-              >
+                className="block text-xl md:text-2xl font-medium text-white hover:text-primary transition-colors">
                 itzSumma11@gmail.com
               </a>
 
@@ -81,19 +80,20 @@ export default function Contact() {
                 href="https://wa.me/8801874760967"
                 target="_blank"
                 rel="noreferrer"
-                className="block text-white/60 hover:text-white transition-colors"
-              >
+                className="block text-white/60 hover:text-white transition-colors">
                 📞 01874760967
               </a>
 
               {/* Location */}
-              <div className="text-white/40 text-sm">
-                📍 Naogaon, Rajshahi
-              </div>
+              <div className="text-white/40 text-sm">📍 Naogaon, Rajshahi</div>
 
-              {/* SOCIAL LINKS */}
+              {/* PROFESSIONAL LINKS */}
               <div className="flex flex-wrap gap-6 pt-2">
                 {[
+                  {
+                    name: "Portfolio",
+                    link: "https://itzSumma.github.io",
+                  },
                   {
                     name: "GitHub",
                     link: "https://github.com/itzSumma",
@@ -102,22 +102,13 @@ export default function Contact() {
                     name: "LinkedIn",
                     link: "https://www.linkedin.com/in/sultana-summa/",
                   },
-                  {
-                    name: "Facebook",
-                    link: "https://www.facebook.com/profile.php?id=61552100236600",
-                  },
-                  {
-                    name: "Instagram",
-                    link: "https://www.instagram.com/_summa611",
-                  },
                 ].map((social) => (
                   <Magnetic key={social.name}>
                     <a
                       href={social.link}
                       target="_blank"
                       rel="noreferrer"
-                      className="text-white/50 hover:text-white hover:scale-105 transition-all duration-300 uppercase text-xs font-mono tracking-widest"
-                    >
+                      className="text-white/50 hover:text-white hover:scale-105 transition-all duration-300 uppercase text-xs font-mono tracking-widest">
                       {social.name}
                     </a>
                   </Magnetic>
@@ -169,8 +160,7 @@ export default function Contact() {
                 value={formData.message}
                 onChange={handleChange}
                 className="w-full bg-transparent border-b border-white/10 py-4 text-white focus:outline-none focus:border-primary transition-colors resize-none"
-                placeholder="Write your message..."
-              ></textarea>
+                placeholder="Write your message..."></textarea>
             </div>
 
             <Magnetic>
@@ -181,20 +171,19 @@ export default function Contact() {
                   status === "success"
                     ? "bg-green-500 text-white"
                     : status === "error"
-                    ? "bg-red-500 text-white"
-                    : "bg-primary text-black hover:shadow-[0_0_25px_rgba(70,238,221,0.3)]"
-                }`}
-              >
+                      ? "bg-red-500 text-white"
+                      : "bg-primary text-black hover:shadow-[0_0_25px_rgba(70,238,221,0.3)]"
+                }`}>
                 {status === "sending"
                   ? "SENDING..."
                   : status === "success"
-                  ? "✓ MESSAGE SENT!"
-                  : status === "error"
-                  ? "TRY AGAIN"
-                  : "SEND MESSAGE"}
+                    ? "✓ MESSAGE SENT!"
+                    : status === "error"
+                      ? "TRY AGAIN"
+                      : "SEND MESSAGE"}
               </button>
             </Magnetic>
-            
+
             {status === "success" && (
               <p className="text-green-400 text-sm text-center mt-4">
                 Thank you! Your message has been sent successfully.
@@ -214,4 +203,4 @@ export default function Contact() {
       </div>
     </section>
   );
-}
+}
