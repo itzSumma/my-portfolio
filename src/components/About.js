@@ -12,6 +12,10 @@ import {
   BadgeCheck,
   ArrowRight,
   Sparkles,
+  Users,
+  PenTool,
+  Palette,
+  Mic2,
 } from "lucide-react";
 import Magnetic from "./Magnetic";
 
@@ -46,12 +50,31 @@ export default function About() {
     },
   ];
 
-  const strengths = [
-    "Communication",
-    "Collaboration",
-    "Problem Solving",
-    "Adaptability",
-    "Continuous Learning",
+  const beyondProgramming = [
+    {
+      icon: <Users className="w-6 h-6 text-primary" />,
+      title: "Volunteering",
+      description:
+        "I enjoy contributing to community initiatives and helping others. Volunteering has strengthened my empathy, teamwork, and sense of responsibility.",
+    },
+    {
+      icon: <PenTool className="w-6 h-6 text-primary" />,
+      title: "Writing",
+      description:
+        "Writing allows me to organize my thoughts, express ideas clearly, and continuously improve my communication skills.",
+    },
+    {
+      icon: <Palette className="w-6 h-6 text-primary" />,
+      title: "Painting",
+      description:
+        "Painting helps me stay creative, patient, and detail-oriented while providing a balanced outlet beyond technology.",
+    },
+    {
+      icon: <Mic2 className="w-6 h-6 text-primary" />,
+      title: "Public Speaking & Debate",
+      description:
+        "I enjoy motivational stage speaking and have experience delivering speeches. I was also a debate competition winner during high school, which strengthened my confidence, communication, and critical thinking skills.",
+    },
   ];
 
   const quickFacts = [
@@ -200,6 +223,47 @@ export default function About() {
 
                 <p className="text-white/60 text-sm font-body leading-relaxed">
                   {feature.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Beyond Programming Section */}
+        <div className="space-y-8">
+          <div>
+            <h3 className="flex items-center gap-2 text-xl font-bold text-white">
+              <Sparkles className="w-5 h-5 text-primary" />
+              Beyond Programming
+            </h3>
+            <p className="text-white/60 text-sm max-w-2xl font-body mt-1">
+              Outside of programming, I enjoy creative pursuits and communication that build confidence and a growth-oriented mindset.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {beyondProgramming.map((item, index) => (
+              <motion.div
+                key={index}
+                variants={cardVars}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.12 }}
+                whileHover={{ y: -5, borderColor: "rgba(70,238,221,0.4)" }}
+                className="glass p-6 rounded-3xl border border-white/10 space-y-4 group transition-all duration-300 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                <div className="w-12 h-12 rounded-2xl glass border border-primary/20 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  {item.icon}
+                </div>
+
+                <h4 className="text-lg font-bold font-display text-white group-hover:text-primary transition-colors">
+                  {item.title}
+                </h4>
+
+                <p className="text-white/60 text-xs font-body leading-relaxed">
+                  {item.description}
                 </p>
               </motion.div>
             ))}

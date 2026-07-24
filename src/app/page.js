@@ -18,17 +18,15 @@ export default function Home() {
       <LoadingScreen />
       <BackgroundEffects />
       <Navbar />
-      
+
       <main>
         <Hero />
         <About />
-        <Skills/>
+        <Skills />
         <TechMarquee />
-          <HorizontalProjects />
+        <HorizontalProjects />
         <Education />
-        <Certificates/>
-        <div id="projects">
-        </div>
+        <Certificates />
         <Contact />
       </main>
 
@@ -36,4 +34,3 @@ export default function Home() {
     </SmoothScroll>
   );
 }
-
