@@ -28,9 +28,9 @@ The portfolio currently uses a shared project data source to power both the home
 
 Included projects:
 
+- PUREYUNA
 - DEVARCHIFY
 - VERDICT HUB
-- KEEN KEEPER
 
 Each project card includes:
 

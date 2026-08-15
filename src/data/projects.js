@@ -1,5 +1,73 @@
 export const projects = [
   {
+    slug: "pureyuna",
+    title: "PureYuna — Full-Stack Skincare E-Commerce Platform",
+    category: "Full-Stack Developer",
+    img: "/projects/pureyuna.png",
+    description:
+      "Modern clean botanical skincare store with dynamic curated multi-step routine packages, proportional pricing engine, and role-based admin controls.",
+    features: [
+      "36-Product Multi-Category Catalog",
+      "Curated Multi-Step Routine Packages",
+      "Smart Cart Drawer & Pricing Engine",
+      "Admin Management Suite",
+      "Personalized Product Discovery",
+      "Role-Based Admin & Auth",
+      "RESTful API Architecture",
+      "Responsive UI",
+    ],
+    tech: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Node.js",
+      "Express.js",
+      "PostgreSQL",
+      "Prisma ORM",
+      "Neon DB",
+      "Render",
+      "Vercel",
+    ],
+    liveUrl: "https://pure-yuna-client.vercel.app/",
+    link: "https://pure-yuna-client.vercel.app/",
+    githubUrl: "https://github.com/itzSumma/PureYuna_Client",
+    githubFrontend: "https://github.com/itzSumma/PureYuna_Client",
+    githubBackend: "https://github.com/itzSumma/PureYuna",
+    challenges: [
+      {
+        title: "Relational Data Modeling & Multi-table Relations",
+        problem:
+          "Structuring complex e-commerce entity relationships (Users, Orders, OrderItems, Products, Categories, Packages, Wishlists) while preventing data inconsistency and slow query performance.",
+        solution:
+          "Designed a normalized PostgreSQL schema using Prisma ORM with strict foreign key constraints, cascading rules, and indexed search attributes to ensure fast and consistent data retrieval.",
+      },
+      {
+        title: "Secure Checkout, Stock & Serverless Connection Management",
+        problem:
+          "Preventing invalid quantities, pricing mismatches, and stock inconsistencies during checkout, alongside handling database connection pool exhaustion on cloud-hosted serverless PostgreSQL.",
+        solution:
+          "Moved critical checkout validation to the backend, verified stock using Prisma transactions, and integrated Neon PostgreSQL connection pooling to maintain low latency under concurrent traffic spikes.",
+      },
+      {
+        title: "Role-Based Admin & Production Deployment Pipeline",
+        problem:
+          "Protecting administrative routes from unauthorized access and managing automated database migrations with CORS handshake policies during live deployment on Render.",
+        solution:
+          "Implemented JWT-based authentication with strict role authorization, automated build-time Prisma migrations on Render, and configured centralized production CORS headers.",
+      },
+    ],
+    futureImprovements: [
+      "Personalized skincare recommendations based on user skin profiles",
+      "Online payment gateway integration (Stripe / SSLCommerz)",
+      "Customer review and product rating system",
+      "Advanced admin analytics and real-time sales dashboard",
+      "Redis caching layer for top-selling products and frequent queries",
+      "Real-time stock inventory tracking & webhook notifications",
+      "AI-powered skincare assistant",
+    ],
+  },
+  {
     slug: "devarchify",
     title: "DEVARCHIFY",
     category: "Full Stack AI Platform",
@@ -119,55 +187,6 @@ export const projects = [
       "In-app notifications for status changes",
       "Better payment retry and refund handling",
       "Improved profile verification workflow",
-    ],
-  },
-  {
-    slug: "keen-keeper",
-    title: "KEEN KEEPER",
-    category: "React Web Application",
-    img: "/keen-keeper.png",
-    description:
-      "A responsive React application designed to help users organize and manage their friends efficiently. It provides an intuitive interface for adding, tracking, and visualizing friend-related data through interactive charts.",
-    features: [
-      "Friend Management",
-      "Interactive Charts",
-      "Responsive Design",
-      "CRUD Operations",
-      "Modern UI",
-    ],
-    tech: [
-      "React 19",
-      "React Router 7",
-      "Tailwind CSS 4",
-      "DaisyUI",
-      "Recharts",
-    ],
-    liveUrl: "https://keen-keeper-friendzone.netlify.app/",
-    link: "https://keen-keeper-friendzone.netlify.app/",
-    githubUrl: "https://github.com/itzSumma/Keen-Keeper",
-    githubFrontend: "https://github.com/itzSumma/Keen-Keeper",
-    challenges: [
-      {
-        title: "Interactive Data Visualization",
-        problem:
-          "Presenting friend statistics in a clear and responsive way without affecting the user experience.",
-        solution:
-          "Integrated Recharts to build dynamic, responsive charts and optimized component rendering for smooth interactions.",
-      },
-      {
-        title: "State Management",
-        problem:
-          "Keeping the UI synchronized when users add, update, or remove friend information.",
-        solution:
-          "Managed application state efficiently with React hooks to ensure instant UI updates and a seamless user experience.",
-      },
-    ],
-    futureImprovements: [
-      "Search and filter for friend records",
-      "Exporting charts and data summaries",
-      "Calendar-based activity tracking",
-      "Progress insights for long-term engagement",
-      "Improved offline support for mobile use",
     ],
   },
 ];

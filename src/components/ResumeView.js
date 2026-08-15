@@ -61,6 +61,28 @@ export default function Resume() {
 
   const projects = [
     {
+      title: "PureYuna",
+      tech: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Node.js",
+        "Express.js",
+        "PostgreSQL",
+        "Prisma ORM",
+        "Neon DB",
+      ],
+      highlights: [
+        "Relational Schema",
+        "Custom Pricing Engine",
+        "Role-Based Admin",
+        "RESTful API",
+      ],
+      description:
+        "A modern full-stack skincare e-commerce platform with organic care and precision formulated taxonomies. Features a dynamic routine package builder, a smart checkout engine with proportional discount distribution, and full admin dashboard CRUD operations.",
+    },
+    {
       title: "DevArchify",
       tech: [
         "Next.js",
@@ -94,13 +116,6 @@ export default function Resume() {
       highlights: ["Stripe", "Authentication", "Role Based Access", "REST API"],
       description:
         "A full-stack legal platform that connects clients with verified lawyers. Users can search, hire and securely pay lawyers using Stripe. Includes role-based dashboards and secure authentication.",
-    },
-    {
-      title: "Keen Keeper",
-      tech: ["React", "React Router", "Tailwind CSS", "DaisyUI", "Recharts"],
-      highlights: ["Charts", "CRUD", "Responsive", "React"],
-      description:
-        "A responsive React application for managing and organizing friends with interactive charts and a clean modern UI.",
     },
   ];
 

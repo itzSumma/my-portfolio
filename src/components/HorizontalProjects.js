@@ -10,8 +10,16 @@ gsap.registerPlugin(ScrollTrigger);
 export default function HorizontalProjects() {
   const sectionRef = useRef(null);
   const triggerRef = useRef(null);
+  const [isDesktop, setIsDesktop] = React.useState(false);
 
   useEffect(() => {
+    setIsDesktop(window.innerWidth >= 1024);
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+      ScrollTrigger.refresh();
+    };
+    window.addEventListener("resize", handleResize);
+
     let ctx = gsap.context(() => {
       // GSAP pinning and horizontal movement only for desktop screens (>= 1024px)
       const mm = gsap.matchMedia();
@@ -21,13 +29,13 @@ export default function HorizontalProjects() {
           sectionRef.current,
           { translateX: 0 },
           {
-            translateX: "-200vw", // For 3 projects (300vw total width wrapper, translating -200vw)
+            translateX: `-${(projects.length - 1) * 100}vw`,
             ease: "none",
             duration: 1,
             scrollTrigger: {
               trigger: triggerRef.current,
               start: "top top",
-              end: "3000 top",
+              end: `${projects.length * 1000} top`,
               scrub: 0.6,
               pin: true,
               anticipatePin: 1,
@@ -39,9 +47,6 @@ export default function HorizontalProjects() {
         return () => pin.kill();
       });
     });
-
-    const handleResize = () => ScrollTrigger.refresh();
-    window.addEventListener("resize", handleResize);
 
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -64,7 +69,8 @@ export default function HorizontalProjects() {
       <div ref={triggerRef} className="w-full">
         <div
           ref={sectionRef}
-          className="flex flex-col lg:flex-row lg:h-screen lg:w-[300vw]">
+          className="flex flex-col lg:flex-row lg:h-screen"
+          style={{ width: isDesktop ? `${projects.length * 100}vw` : "100%" }}>
           {projects.map((project, index) => (
             <div
               key={index}
