@@ -43,7 +43,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border border-primary/20">
             <span className="w-2.5 h-2.5 rounded-full bg-primary animate-ping" />
             <span className="text-xs font-mono text-primary tracking-wider uppercase">
-              Available for Freelance & Full-Time
+              Available for Remote Freelance & Full-Time
             </span>
           </motion.div>
 
@@ -111,7 +111,7 @@ export default function Hero() {
             </Magnetic>
             <Magnetic>
               <a
-                href="/resume"
+                href="https://drive.google.com/file/d/1FkZDJBm3_JxAZSbnIW8zl7kE9U3E3qqM/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-4 glass text-white font-bold rounded-xl border border-white/10 hover:bg-white/5 hover:border-primary/40 transition-all flex items-center gap-2">
