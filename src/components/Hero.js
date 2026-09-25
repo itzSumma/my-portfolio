@@ -1,12 +1,13 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import Magnetic from "./Magnetic";
-import { Mail, ArrowRight, Download } from "lucide-react";
+import { Mail, ArrowRight, Download, X, ExternalLink, FileText } from "lucide-react";
 
 export default function Hero() {
   const [isMounted, setIsMounted] = React.useState(false);
+  const [isResumeModalOpen, setIsResumeModalOpen] = React.useState(false);
 
   React.useEffect(() => {
     setIsMounted(true);
@@ -110,14 +111,12 @@ export default function Hero() {
               </a>
             </Magnetic>
             <Magnetic>
-              <a
-                href="/Sharmin_Sultana_Resume.pdf"
-                download="Sharmin_Sultana_Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-8 py-4 glass text-white font-bold rounded-xl border border-white/10 hover:bg-white/5 hover:border-primary/40 transition-all flex items-center gap-2">
+              <button
+                type="button"
+                onClick={() => setIsResumeModalOpen(true)}
+                className="px-8 py-4 glass text-white font-bold rounded-xl border border-white/10 hover:bg-white/5 hover:border-primary/40 transition-all flex items-center gap-2 cursor-pointer">
                 <Download size={18} /> Download Resume
-              </a>
+              </button>
             </Magnetic>
           </motion.div>
 
@@ -282,6 +281,104 @@ export default function Hero() {
       <div className="absolute inset-0 z-[-2] opacity-10 [background-image:linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] [background-size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 blur-[120px] rounded-full -z-10" />
       <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-secondary/5 blur-[100px] rounded-full -z-10" />
+
+      {/* Resume Preview Modal */}
+      <AnimatePresence>
+        {isResumeModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[9999] bg-black/80 backdrop-blur-md flex items-center justify-center p-3 sm:p-6"
+            onClick={() => setIsResumeModalOpen(false)}>
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.95, opacity: 0, y: 20 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="relative w-full max-w-5xl h-[90vh] bg-[#0c1020] border border-white/15 rounded-2xl flex flex-col shadow-2xl overflow-hidden"
+              onClick={(e) => e.stopPropagation()}>
+              {/* Modal Top Bar */}
+              <div className="flex items-center justify-between px-5 py-4 border-b border-white/10 bg-white/[0.02]">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
+                    <FileText size={18} />
+                  </div>
+                  <div>
+                    <h3 className="text-white font-bold text-sm sm:text-base font-display">
+                      Sharmin Sultana — Resume
+                    </h3>
+                    <p className="text-white/50 text-xs hidden sm:block">
+                      Full Stack Developer Resume Preview
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  {/* Download Action Button */}
+                  <a
+                    href="/Sharmin_Sultana_Resume.pdf"
+                    download="Sharmin_Sultana_Resume.pdf"
+                    className="px-4 py-2 bg-primary text-black font-bold text-xs sm:text-sm rounded-lg hover:shadow-[0_0_20px_rgba(70,238,221,0.5)] transition-all flex items-center gap-1.5 cursor-pointer">
+                    <Download size={15} /> Download PDF
+                  </a>
+
+                  {/* Open in Drive */}
+                  <a
+                    href="https://drive.google.com/file/d/1FkZDJBm3_JxAZSbnIW8zl7kE9U3E3qqM/view?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hidden sm:flex px-3 py-2 glass text-white/80 hover:text-white text-xs rounded-lg border border-white/10 hover:border-primary/40 transition-all items-center gap-1.5"
+                    title="Open on Google Drive">
+                    <ExternalLink size={14} /> Drive
+                  </a>
+
+                  {/* Close Modal */}
+                  <button
+                    onClick={() => setIsResumeModalOpen(false)}
+                    className="p-2 text-white/60 hover:text-white rounded-lg hover:bg-white/10 transition-colors ml-1 cursor-pointer"
+                    aria-label="Close Preview">
+                    <X size={20} />
+                  </button>
+                </div>
+              </div>
+
+              {/* PDF Preview Frame */}
+              <div className="flex-1 w-full h-full bg-slate-950 p-2 sm:p-4 overflow-hidden relative">
+                <iframe
+                  src="/Sharmin_Sultana_Resume.pdf#view=FitH"
+                  className="w-full h-full rounded-xl border border-white/5 bg-slate-900"
+                  title="Resume Preview"
+                />
+              </div>
+
+              {/* Bottom Quick Bar */}
+              <div className="px-5 py-2.5 border-t border-white/10 bg-white/[0.02] flex items-center justify-between text-xs text-white/60">
+                <span className="hidden sm:inline">
+                  Having trouble viewing? You can also{" "}
+                  <a
+                    href="/Sharmin_Sultana_Resume.pdf"
+                    download="Sharmin_Sultana_Resume.pdf"
+                    className="text-primary hover:underline">
+                    download the PDF directly
+                  </a>
+                  .
+                </span>
+                <span className="sm:hidden text-[11px] text-white/50">
+                  Tip: Use the Download PDF button above to save.
+                </span>
+                <a
+                  href="/resume"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline flex items-center gap-1">
+                  Full Page View <ExternalLink size={12} />
+                </a>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

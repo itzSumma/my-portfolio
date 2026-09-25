@@ -8,7 +8,7 @@ const nextConfig = {
         headers: [
           {
             key: "Content-Disposition",
-            value: 'attachment; filename="Sharmin_Sultana_Resume.pdf"',
+            value: 'inline; filename="Sharmin_Sultana_Resume.pdf"',
           },
         ],
       },
@@ -17,7 +17,7 @@ const nextConfig = {
         headers: [
           {
             key: "Content-Disposition",
-            value: 'attachment; filename="Sharmin_Sultana_Resume.pdf"',
+            value: 'inline; filename="Sharmin_Sultana_Resume.pdf"',
           },
         ],
       },

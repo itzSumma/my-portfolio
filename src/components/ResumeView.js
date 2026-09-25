@@ -1,9 +1,10 @@
 "use client";
-import React from "react";
-import { Mail, Phone, MapPin, Globe, Download } from "lucide-react";
+import React, { useState } from "react";
+import { Mail, Phone, MapPin, Globe, Download, ArrowLeft, ExternalLink, FileText } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
 export default function Resume() {
+  const [viewMode, setViewMode] = useState("pdf");
   const skills = [
     {
       category: "Frontend",
@@ -153,8 +154,106 @@ export default function Resume() {
   ];
 
   return (
-    <main className="min-h-screen bg-white text-slate-900 py-12 px-4 sm:px-6 lg:px-8 font-sans print:py-0 print:px-0 print:bg-white">
-      <div className="max-w-4xl mx-auto bg-white border border-slate-200/80 shadow-xl print:shadow-none print:border-none p-8 sm:p-12 rounded-lg">
+    <main className="min-h-screen bg-[#070913] text-slate-100 py-6 sm:py-8 px-4 sm:px-6 lg:px-8 font-sans print:py-0 print:px-0 print:bg-white">
+      {/* Top Controls Bar */}
+      <div className="max-w-5xl mx-auto mb-6 flex flex-wrap items-center justify-between gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-xl shadow-xl print:hidden">
+        <div className="flex items-center gap-3">
+          <a
+            href="/"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-white/80 hover:text-white text-xs font-medium transition-all border border-white/10">
+            <ArrowLeft size={14} /> Back
+          </a>
+          <div>
+            <h1 className="font-bold text-sm sm:text-base text-white flex items-center gap-2">
+              <FileText size={16} className="text-primary" /> Sharmin Sultana — Resume
+            </h1>
+            <p className="text-[11px] text-white/50 hidden sm:block">
+              Full Stack Developer (Next.js • React • Node.js • TypeScript)
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-center gap-2">
+          {/* View Mode Toggle */}
+          <div className="flex items-center p-1 bg-white/5 rounded-xl border border-white/10">
+            <button
+              type="button"
+              onClick={() => setViewMode("pdf")}
+              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer ${
+                viewMode === "pdf"
+                  ? "bg-primary text-black font-semibold shadow"
+                  : "text-white/60 hover:text-white"
+              }`}>
+              PDF Preview
+            </button>
+            <button
+              type="button"
+              onClick={() => setViewMode("text")}
+              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer ${
+                viewMode === "text"
+                  ? "bg-primary text-black font-semibold shadow"
+                  : "text-white/60 hover:text-white"
+              }`}>
+              Clean ATS
+            </button>
+          </div>
+
+          {/* Download Action Button */}
+          <a
+            href="/Sharmin_Sultana_Resume.pdf"
+            download="Sharmin_Sultana_Resume.pdf"
+            className="px-4 py-2 bg-primary text-black font-bold text-xs sm:text-sm rounded-xl hover:shadow-[0_0_20px_rgba(70,238,221,0.5)] transition-all flex items-center gap-1.5 cursor-pointer">
+            <Download size={15} /> Download PDF
+          </a>
+
+          {/* Google Drive Link */}
+          <a
+            href="https://drive.google.com/file/d/1FkZDJBm3_JxAZSbnIW8zl7kE9U3E3qqM/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-white/70 hover:text-white border border-white/10 transition-all hidden sm:flex"
+            title="Open in Google Drive">
+            <ExternalLink size={16} />
+          </a>
+        </div>
+      </div>
+
+      {/* PDF Preview Frame (Default) */}
+      {viewMode === "pdf" && (
+        <div className="max-w-5xl mx-auto mb-10 print:hidden">
+          <div className="w-full h-[85vh] rounded-2xl overflow-hidden border border-white/10 bg-slate-900 shadow-2xl">
+            <iframe
+              src="/Sharmin_Sultana_Resume.pdf#view=FitH"
+              className="w-full h-full border-0 bg-slate-900"
+              title="Sharmin Sultana Resume PDF Preview"
+            />
+          </div>
+          <div className="mt-3 flex items-center justify-between text-xs text-white/50 px-2">
+            <span>
+              Direct link:{" "}
+              <a
+                href="/Sharmin_Sultana_Resume.pdf"
+                download="Sharmin_Sultana_Resume.pdf"
+                className="text-primary hover:underline">
+                Sharmin_Sultana_Resume.pdf
+              </a>
+            </span>
+            <a
+              href="https://drive.google.com/file/d/1FkZDJBm3_JxAZSbnIW8zl7kE9U3E3qqM/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline flex items-center gap-1">
+              View on Google Drive <ExternalLink size={12} />
+            </a>
+          </div>
+        </div>
+      )}
+
+      {/* Clean ATS HTML Resume View */}
+      <div
+        className={`max-w-4xl mx-auto bg-white border border-slate-200/80 shadow-xl print:shadow-none print:border-none p-8 sm:p-12 rounded-lg text-slate-800 ${
+          viewMode === "pdf" ? "hidden print:block" : "block"
+        }`}>
         {/* Header Section */}
         <header className="border-b border-slate-200 pb-8">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
