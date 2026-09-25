@@ -364,11 +364,12 @@ export default function Resume() {
 
       {/* Action Button for Non-Print View */}
       <div className="fixed bottom-6 right-6 print:hidden z-50">
-        <button
-          onClick={() => window.print()}
+        <a
+          href="/Sharmin_Sultana_Resume.pdf"
+          download="Sharmin_Sultana_Resume.pdf"
           className="flex items-center gap-2 px-5 py-3 bg-black text-white rounded-full font-semibold text-xs tracking-wider uppercase shadow-xl hover:bg-slate-800 transition-all active:scale-95">
           <Download size={16} /> Download PDF
-        </button>
+        </a>
       </div>
     </main>
   );

@@ -111,7 +111,8 @@ export default function Hero() {
             </Magnetic>
             <Magnetic>
               <a
-                href="https://drive.google.com/file/d/1FkZDJBm3_JxAZSbnIW8zl7kE9U3E3qqM/view?usp=sharing"
+                href="/Sharmin_Sultana_Resume.pdf"
+                download="Sharmin_Sultana_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-4 glass text-white font-bold rounded-xl border border-white/10 hover:bg-white/5 hover:border-primary/40 transition-all flex items-center gap-2">
