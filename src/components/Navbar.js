@@ -59,7 +59,7 @@ export default function Navbar() {
         <Magnetic>
           <a
             href="#"
-            className="text-xl md:text-2xl font-bold font-display tracking-tighter cursor-pointer group flex items-center gap-1">
+            className="text-xl md:text-2xl font-bold font-display tracking-tighter cursor-pointer group flex items-center gap-1 italic">
             <span className="text-white drop-shadow-md">Sharmin</span>
             <span className="text-primary drop-shadow-md">Sultana</span>
             <span className="text-primary group-hover:animate-pulse">.</span>
@@ -67,13 +67,13 @@ export default function Navbar() {
         </Magnetic>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-10">
+        <div className="hidden md:flex items-center space-x-8 lg:space-x-10">
           {navItems.map((item) => (
             <Magnetic key={item.name}>
               <motion.a
                 href={item.href}
                 onClick={() => setActiveItem(item.name)}
-                className={`text-sm font-medium transition-all relative group py-1 ${
+                className={`text-base font-medium transition-all relative group py-1 ${
                   activeItem === item.name
                     ? "text-primary font-semibold"
                     : "text-white/70 hover:text-white"

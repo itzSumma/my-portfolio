@@ -73,15 +73,24 @@ export default function Hero() {
             </h2>
           </motion.div>
 
-          {/* Short Introduction */}
-          <motion.p
-            variants={textVars}
-            className="text-base md:text-lg text-white/60 max-w-lg font-body leading-relaxed">
-            I build modern web applications using React, Next.js, TypeScript,
-            Node.js, Express, MongoDB, and Mongoose. Passionate about writing
-            clean, maintainable code and creating user-focused digital
-            experiences.
-          </motion.p>
+          {/* Tagline, Bio & Tech Stack */}
+          <motion.div variants={textVars} className="space-y-4 max-w-xl">
+            <p className="text-lg md:text-xl font-medium text-white/90 leading-snug">
+              I don&apos;t just build pages — I turn ideas into real, scalable web experiences.
+            </p>
+
+            <p className="text-sm md:text-base text-white/70 font-body leading-relaxed">
+              From crafting clean, interactive interfaces with{" "}
+              <strong className="text-white font-semibold">React &amp; Next.js</strong>{" "}
+              to building secure APIs, authentication, databases, and business logic with{" "}
+              <strong className="text-white font-semibold">Node.js &amp; Express</strong>{" "}
+              — I enjoy breaking complex problems into simple, maintainable solutions.
+            </p>
+
+            <p className="text-xs sm:text-sm font-mono text-primary font-semibold tracking-wide pt-1">
+              React • Next.js • TypeScript • Node.js • Express • MongoDB • Prisma • PostgreSQL
+            </p>
+          </motion.div>
 
           {/* CTA Buttons */}
           <motion.div
