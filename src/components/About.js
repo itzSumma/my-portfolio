@@ -175,17 +175,25 @@ export default function About() {
               My Journey
             </h3>
 
-            <p className="text-white/70 font-body leading-relaxed text-base">
-              My journey into web development began with curiosity and has grown
-              into a passion for building complete web applications. Through
-              consistent learning and hands-on projects, I've developed both my
-              technical skills and problem-solving mindset.
+            <p className="text-white/75 font-body leading-relaxed text-base md:text-lg">
+              My journey into web development started with curiosity and little
+              to no programming knowledge. I began learning step by step, turning
+              that curiosity into a genuine interest in building web
+              applications.
             </p>
 
-            <p className="text-white/60 font-body leading-relaxed text-sm">
-              I believe continuous learning is the key to growth. Every
-              challenge, project, and new technology helps me become a more
-              capable developer and prepares me to build better software.
+            <p className="text-white/75 font-body leading-relaxed text-base md:text-lg">
+              Through consistent learning and hands-on projects, I gradually
+              developed my skills in both frontend and backend development. Each
+              project taught me something new—not only about technology, but
+              also about problem-solving, debugging, and building solutions that
+              work in real-world situations.
+            </p>
+
+            <p className="text-white/70 font-body leading-relaxed text-base md:text-lg">
+              Today, I enjoy building full-stack applications and continuously
+              improving my skills. I believe every project and challenge is an
+              opportunity to learn, grow, and become a better developer.
             </p>
           </motion.div>
         </div>
