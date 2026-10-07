@@ -155,10 +155,10 @@ export default function About() {
             </p>
 
             <p className="text-white/60 font-body leading-relaxed text-sm">
-              Every project is an opportunity to learn, improve, and solve
-              meaningful problems. I value clean architecture, attention to
-              detail, and writing code that remains scalable and maintainable
-              over time.
+              I approach each project as an opportunity to learn, improve, and
+              solve real-world problems. I value clean architecture, attention to
+              detail, and writing code that is easy to understand, maintain, and
+              scale as the application grows.
             </p>
           </motion.div>
 
