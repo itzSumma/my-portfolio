@@ -148,18 +148,23 @@ export default function About() {
               My Development Philosophy
             </h3>
 
-            <div className="space-y-6 flex-1 flex flex-col justify-center">
+            <div className="space-y-4 md:space-y-5 flex-1">
               <p className="text-white/75 font-body leading-relaxed text-base">
                 I believe great software is more than just writing code. My goal
                 is to build applications that are intuitive, reliable, and easy to
                 maintain, with a strong focus on performance and user experience.
               </p>
 
+              <p className="text-white/75 font-body leading-relaxed text-base">
+                I value clean architecture, attention to detail, and writing
+                maintainable code that is easy to understand, test, and scale as
+                the application grows.
+              </p>
+
               <p className="text-white/70 font-body leading-relaxed text-base">
-                I approach each project as an opportunity to learn, improve, and
-                solve real-world problems. I value clean architecture, attention to
-                detail, and writing code that is easy to understand, maintain, and
-                scale as the application grows.
+                Every project is an opportunity to solve real-world problems with
+                practical, modern solutions while continuously refining my
+                craftsmanship and technical skills.
               </p>
             </div>
           </motion.div>
@@ -177,7 +182,7 @@ export default function About() {
               My Journey
             </h3>
 
-            <div className="space-y-5 flex-1">
+            <div className="space-y-4 md:space-y-5 flex-1">
               <p className="text-white/75 font-body leading-relaxed text-base">
                 My journey into web development started with curiosity and little
                 to no programming knowledge. I began learning step by step, turning
