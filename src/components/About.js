@@ -141,14 +141,14 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="h-full flex flex-col space-y-6 glass p-8 rounded-3xl border border-white/10 relative overflow-hidden group hover:border-primary/30 transition-all duration-500">
+            className="h-full flex flex-col space-y-6 glass p-8 md:p-10 rounded-3xl border border-white/10 relative overflow-hidden group hover:border-primary/30 transition-all duration-500">
             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 blur-[50px] rounded-full pointer-events-none" />
 
-            <h3 className="text-2xl font-bold font-display text-white">
+            <h3 className="text-2xl md:text-3xl font-bold font-display text-white tracking-normal">
               My Development Philosophy
             </h3>
 
-            <div className="space-y-4 flex-1">
+            <div className="space-y-6 flex-1 flex flex-col justify-center">
               <p className="text-white/75 font-body leading-relaxed text-base">
                 I believe great software is more than just writing code. My goal
                 is to build applications that are intuitive, reliable, and easy to
@@ -170,14 +170,14 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="h-full flex flex-col space-y-6 glass p-8 rounded-3xl border border-white/10 relative overflow-hidden group hover:border-primary/30 transition-all duration-500">
+            className="h-full flex flex-col space-y-6 glass p-8 md:p-10 rounded-3xl border border-white/10 relative overflow-hidden group hover:border-primary/30 transition-all duration-500">
             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 blur-[50px] rounded-full pointer-events-none" />
 
-            <h3 className="text-2xl font-bold font-display text-white">
+            <h3 className="text-2xl md:text-3xl font-bold font-display text-white tracking-normal">
               My Journey
             </h3>
 
-            <div className="space-y-4 flex-1">
+            <div className="space-y-5 flex-1">
               <p className="text-white/75 font-body leading-relaxed text-base">
                 My journey into web development started with curiosity and little
                 to no programming knowledge. I began learning step by step, turning
