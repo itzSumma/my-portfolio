@@ -134,32 +134,34 @@ export default function About() {
         </div>
 
         {/* Introduction & Journey Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
           {/* Who I Am */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="space-y-6 glass p-8 rounded-3xl border border-white/10 relative overflow-hidden group hover:border-primary/30 transition-all duration-500">
+            className="h-full flex flex-col space-y-6 glass p-8 rounded-3xl border border-white/10 relative overflow-hidden group hover:border-primary/30 transition-all duration-500">
             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 blur-[50px] rounded-full pointer-events-none" />
 
             <h3 className="text-2xl font-bold font-display text-white">
               My Development Philosophy
             </h3>
 
-            <p className="text-white/70 font-body leading-relaxed text-base">
-              I believe great software is more than just writing code. My goal
-              is to build applications that are intuitive, reliable, and easy to
-              maintain, with a strong focus on performance and user experience.
-            </p>
+            <div className="space-y-4 flex-1">
+              <p className="text-white/75 font-body leading-relaxed text-base">
+                I believe great software is more than just writing code. My goal
+                is to build applications that are intuitive, reliable, and easy to
+                maintain, with a strong focus on performance and user experience.
+              </p>
 
-            <p className="text-white/60 font-body leading-relaxed text-sm">
-              I approach each project as an opportunity to learn, improve, and
-              solve real-world problems. I value clean architecture, attention to
-              detail, and writing code that is easy to understand, maintain, and
-              scale as the application grows.
-            </p>
+              <p className="text-white/70 font-body leading-relaxed text-base">
+                I approach each project as an opportunity to learn, improve, and
+                solve real-world problems. I value clean architecture, attention to
+                detail, and writing code that is easy to understand, maintain, and
+                scale as the application grows.
+              </p>
+            </div>
           </motion.div>
 
           {/* My Journey */}
@@ -168,33 +170,35 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="space-y-6 glass p-8 rounded-3xl border border-white/10 relative overflow-hidden group hover:border-primary/30 transition-all duration-500">
+            className="h-full flex flex-col space-y-6 glass p-8 rounded-3xl border border-white/10 relative overflow-hidden group hover:border-primary/30 transition-all duration-500">
             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 blur-[50px] rounded-full pointer-events-none" />
 
             <h3 className="text-2xl font-bold font-display text-white">
               My Journey
             </h3>
 
-            <p className="text-white/75 font-body leading-relaxed text-base md:text-lg">
-              My journey into web development started with curiosity and little
-              to no programming knowledge. I began learning step by step, turning
-              that curiosity into a genuine interest in building web
-              applications.
-            </p>
+            <div className="space-y-4 flex-1">
+              <p className="text-white/75 font-body leading-relaxed text-base">
+                My journey into web development started with curiosity and little
+                to no programming knowledge. I began learning step by step, turning
+                that curiosity into a genuine interest in building web
+                applications.
+              </p>
 
-            <p className="text-white/75 font-body leading-relaxed text-base md:text-lg">
-              Through consistent learning and hands-on projects, I gradually
-              developed my skills in both frontend and backend development. Each
-              project taught me something new—not only about technology, but
-              also about problem-solving, debugging, and building solutions that
-              work in real-world situations.
-            </p>
+              <p className="text-white/75 font-body leading-relaxed text-base">
+                Through consistent learning and hands-on projects, I gradually
+                developed my skills in both frontend and backend development. Each
+                project taught me something new—not only about technology, but
+                also about problem-solving, debugging, and building solutions that
+                work in real-world situations.
+              </p>
 
-            <p className="text-white/70 font-body leading-relaxed text-base md:text-lg">
-              Today, I enjoy building full-stack applications and continuously
-              improving my skills. I believe every project and challenge is an
-              opportunity to learn, grow, and become a better developer.
-            </p>
+              <p className="text-white/70 font-body leading-relaxed text-base">
+                Today, I enjoy building full-stack applications and continuously
+                improving my skills. I believe every project and challenge is an
+                opportunity to learn, grow, and become a better developer.
+              </p>
+            </div>
           </motion.div>
         </div>
 
