@@ -46,7 +46,7 @@ export default function About() {
       icon: <Database className="w-6 h-6 text-primary" />,
       title: "Database Management",
       description:
-        "Designing efficient schemas and handling data persistence with MongoDB and Mongoose for optimal performance.",
+        "Working with PostgreSQL and Prisma for relational data, as well as MongoDB and Mongoose for document-based data, including data modeling and database operations.",
     },
   ];
 
