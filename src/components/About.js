@@ -5,6 +5,7 @@ import {
   Code2,
   Server,
   Database,
+  Brain,
   MapPin,
   Briefcase,
   FolderGit2,
@@ -47,6 +48,12 @@ export default function About() {
       title: "Database Management",
       description:
         "Working with PostgreSQL and Prisma for relational data, as well as MongoDB and Mongoose for document-based data, including data modeling and database operations.",
+    },
+    {
+      icon: <Brain className="w-6 h-6 text-primary" />,
+      title: "AI-Powered Applications",
+      description:
+        "Integrating OpenRouter into DevArchify to generate project ideas and architecture blueprints, with saved results and contextual AI conversations.",
     },
   ];
 
@@ -217,7 +224,7 @@ export default function About() {
             // Core Expertise
           </motion.h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
