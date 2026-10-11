@@ -34,7 +34,7 @@ export default function About() {
       icon: <Code2 className="w-6 h-6 text-primary" />,
       title: "Frontend Development",
       description:
-        "Building pixel-perfect, responsive, and highly interactive user interfaces using React, Next.js, and Tailwind CSS.",
+        "Building full-stack project interfaces with Next.js, TypeScript, Tailwind CSS, and shadcn/ui. Focused on reusable components, responsive layouts, form validation, and interactive features.",
     },
     {
       icon: <Server className="w-6 h-6 text-primary" />,
