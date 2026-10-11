@@ -40,7 +40,7 @@ export default function About() {
       icon: <Server className="w-6 h-6 text-primary" />,
       title: "Backend Development",
       description:
-        "Architecting secure, scalable server-side logic and RESTful APIs using Node.js and Express.",
+        "Building REST APIs with Node.js, Express.js, and TypeScript, including JWT authentication, role-based access control, request validation, and server-side business logic.",
     },
     {
       icon: <Database className="w-6 h-6 text-primary" />,
